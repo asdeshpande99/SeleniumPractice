@@ -29,6 +29,7 @@ public class JSAlerts {
 		System.out.println("Alert message "+ alert.getText());
 		alert.accept();
 		System.out.println("Alert result "+driver.findElement(result).getText());
+		System.out.println("Alert result "+driver.findElement(result).getText());
 		
 	}
 	
