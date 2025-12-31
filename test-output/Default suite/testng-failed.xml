@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="valdiateAlerts"/>
+          <include name="validateHOvers"/>
         </methods>
       </class> <!-- test.Practice -->
     </classes>
