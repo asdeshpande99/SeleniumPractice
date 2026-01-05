@@ -30,6 +30,18 @@ public class Practice extends BaseClass{
 		JSAlerts jsalerts = new JSAlerts(getDriver());
 		jsalerts.valdiateAlerts();
 		jsalerts.vaidateJSConfirm();
+		jsalerts.validateJSPrompt();
+	}
+	
+	@Test
+    public void validateDragAndDropTest() throws InterruptedException {
+       drag_and_drop dragPage = new drag_and_drop(getDriver());
+        dragPage.validateDragAndDrop();
+    }
+	@Test
+	public void validateHOvers() {
+		Hovers hover = new Hovers(getDriver());
+		hover.validateHovers();
 	}
 	
 }
