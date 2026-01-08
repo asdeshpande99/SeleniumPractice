@@ -23,8 +23,14 @@ public class BaseClass {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
-        driver.set(new ChromeDriver(options));
+        WebDriver driver = new ChromeDriver(options);
+
+
+        ((ThreadLocal<WebDriver>) driver).set(new ChromeDriver(options));
         getDriver().manage().deleteAllCookies();
         getDriver().get("https://the-internet.herokuapp.com/");
     }
