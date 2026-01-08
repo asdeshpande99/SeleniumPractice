@@ -27,17 +27,19 @@ public class BaseClass {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver webDriver = new ChromeDriver(options);
+        driver.set(webDriver);
 
-
-        ((ThreadLocal<WebDriver>) driver).set(new ChromeDriver(options));
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         getDriver().manage().deleteAllCookies();
         getDriver().get("https://the-internet.herokuapp.com/");
     }
 
     @AfterMethod
     public void tearDown() {
-        getDriver().quit();
-        driver.remove();
+        if (getDriver() != null) {
+            getDriver().quit();
+            driver.remove();
+        }
     }
 }
